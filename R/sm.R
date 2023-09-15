@@ -106,7 +106,7 @@ sm <- function(x, node.sizes, scoring.func = 0, cont.nodes = NULL, max.fanin = N
   
   # aflml <- all.families.log.marginal.likelihood( data, node.sizes, ifm, ess )
 	aflml <- .Call("bnstruct_all_fam_log_marg_lik", data, node.sizes, ifm, ess, scoring.func, PACKAGE = "bnstruct" )
-	
+	print("my name is Azar")
 	# bps <- find.best.parents( aflml )
 	bps <- .Call("bnstruct_fbp", aflml = aflml, PACKAGE = "bnstruct");
 	
@@ -116,7 +116,7 @@ sm <- function(x, node.sizes, scoring.func = 0, cont.nodes = NULL, max.fanin = N
 	order <- find.best.ordering( sinks )
 	
 	parents <- find.best.network( order, bps )
-	
+	print(parents)
 	dag <- parents.to.dag( parents )
 	
 	return( dag )
