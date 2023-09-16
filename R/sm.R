@@ -116,7 +116,7 @@ sm <- function(x, node.sizes, scoring.func = 0, cont.nodes = NULL, max.fanin = N
 	order <- find.best.ordering( sinks )
 	
 	parents <- find.best.network( order, bps )
-	print(parents)
+
 	dag <- parents.to.dag( parents )
 	
 	return( dag )
